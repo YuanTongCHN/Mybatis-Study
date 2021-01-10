@@ -1,9 +1,10 @@
 package com.yuantongchn.pojo;
 
 import javax.naming.Name;
+import java.io.Serializable;
 
 //实体类
-public class User {
+public class User implements Serializable {
     private int id;
     private String name;
     private String pwd;
@@ -39,6 +40,11 @@ public class User {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    @Override
+    public String toString() {
+        return "User" + id + ": name:" + name;
     }
 }
 

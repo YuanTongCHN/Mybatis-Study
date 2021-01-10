@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--父工程-->
+
     <groupId>org.example</groupId>
     <artifactId>Mybatis-Study</artifactId>
     <packaging>pom</packaging>
@@ -13,7 +13,7 @@
         <module>mybatis-01</module>
     </modules>
 
-    <!--导入依赖-->
+
     <dependencies>
 
         <dependency>
@@ -22,7 +22,6 @@
             <version>8.0.22</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -43,5 +42,27 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 
 </project>

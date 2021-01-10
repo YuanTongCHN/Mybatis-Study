@@ -5,7 +5,7 @@
 
 <mapper namespace="com.yuantongchn.dao.UserDao">
 
-    <select id="selectBlog" resultType="com.yauntongchn.dpojo.User">
+    <select id="getUserList" resultType="com.yuantongchn.pojo.User">
         select * from mybatis.user
     </select>
 
