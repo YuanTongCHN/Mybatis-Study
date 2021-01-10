@@ -5,8 +5,8 @@
 
 <mapper namespace="com.yuantongchn.dao.UserDao">
 
-    <select id="selectBlog" resultType="Blog">
-        select * from Blog where id = #{id}
+    <select id="selectBlog" resultType="com.yauntongchn.dpojo.User">
+        select * from mybatis.user
     </select>
 
 </mapper>
