@@ -39,6 +39,24 @@ public class UserMapperTest {
         //关闭SqlSeession
         sqlSession.close();
     }
+
+    @Test
+    public void addUser() {
+        //第一步：获得SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        //执行SQL
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.addUser(new User(5, "李治", "123456"));
+
+        if (res > 0) {
+            System.out.println("插入成功");
+        }
+
+        //关闭SqlSeession
+        sqlSession.commit();//提交事务，增删改需要
+        sqlSession.close();
+    }
 }
 
 
