@@ -3,10 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.yuantongchn.dao.UserDao">
+<mapper namespace="com.yuantongchn.dao.UserMapper">
 
     <select id="getUserList" resultType="com.yuantongchn.pojo.User">
         select * from mybatis.user
+    </select>
+
+    <select id="getUserById" resultType="com.yuantongchn.pojo.User">
+        select * from mybatis.user where id = #{id}
     </select>
 
 </mapper>
