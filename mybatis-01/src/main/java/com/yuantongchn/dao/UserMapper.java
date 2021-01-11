@@ -7,6 +7,8 @@ import java.util.List;
 public interface UserMapper {
     //查询所有用户
     List<User> getUserList();
+    //模糊查询
+    List<User> getUserLike(String value);
     //根据ID查询用户
     User getUserById(int id);
     //insert一个用户

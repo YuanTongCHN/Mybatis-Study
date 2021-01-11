@@ -26,6 +26,20 @@ public class UserMapperTest {
     }
 
     @Test
+    public void getUserLike() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        List<User> userList = userMapper.getUserLike("%李%");
+
+        for (User user : userList) {
+            System.out.println(user);
+        }
+
+        sqlSession.close();
+    }
+
+    @Test
     public void getUserById() {
         //第一步：获得SqlSession对象
         SqlSession sqlSession = MybatisUtils.getSqlSession();
