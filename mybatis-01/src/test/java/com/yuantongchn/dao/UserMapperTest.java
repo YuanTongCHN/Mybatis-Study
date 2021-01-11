@@ -57,6 +57,39 @@ public class UserMapperTest {
         sqlSession.commit();//提交事务，增删改需要
         sqlSession.close();
     }
+
+    @Test
+    public void updateUser() {
+        //第一步：获得SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        //执行SQL
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.updateUser(new User(5, "嬴政", "123456"));
+
+        if (res > 0) {
+            System.out.println("修改成功");
+        }
+
+        //关闭SqlSeession
+        sqlSession.commit();//提交事务，增删改需要
+        sqlSession.close();
+    }
+
+    @Test
+    public void deleteUser() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.deleteUser(5);
+
+        if (res > 0) {
+            System.out.println("删除成功");
+        }
+
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }
 
 
